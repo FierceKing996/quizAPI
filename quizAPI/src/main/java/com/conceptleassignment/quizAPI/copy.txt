@@ -1,0 +1,89 @@
+Service
+
+package com.conceptleassignment.quizAPI.service;
+
+import com.conceptleassignment.quizAPI.Repository.QuestionProjection;
+import com.conceptleassignment.quizAPI.Repository.QuizRepo;
+import com.conceptleassignment.quizAPI.entity.QuizQuestion;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Random;
+
+@Component
+public class QuizService {
+    /*@Autowired
+    private QuizRepo quizRepo;
+
+    public QuestionProjection getquestion(long id){
+        return quizRepo.findAllByquesid(id);
+    }
+
+    //public boolean sendans(@Re)*/
+
+}
+
+quizrepo
+
+package com.conceptleassignment.quizAPI.Repository;
+
+import com.conceptleassignment.quizAPI.entity.QuizQuestion;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+@EnableJpaRepositories
+public interface QuizRepo extends JpaRepository<QuizQuestion, Long> {
+    QuestionProjection findAllByquesid(long id);
+
+}
+question projection
+package com.conceptleassignment.quizAPI.Repository;
+
+public interface QuestionProjection {
+    String getQuestion();
+    String getOption1();
+    String fetOption2();
+    String getOption3();
+    String getOption4();
+}
+
+controller
+
+/*public int countq = 0;
+    public int countright = 0;
+    public int countwrong = 0;*/
+    /*@GetMapping("/newseesion")
+    public void newsession() {
+        countq = 0;
+        countright = 0;
+        countwrong = 0;
+    }*/
+    /*@Autowired
+    private QuizService quizService;*/
+    /*@Autowired
+    private QuizRepo quizRepo;
+
+    public Long getRandomQuestionId() {
+        List<Long> ids = quizRepo.findAll()
+                .stream()
+                .map(QuizQuestion::getQuesid)
+                .toList();
+
+        if (ids.isEmpty()) {
+            return null; // Handle empty table case
+        }
+        Random random = new Random();
+        return ids.get(random.nextInt(ids.size()));
+    }*/
+    /*@GetMapping
+    public QuestionProjection getques(){
+        long randid= 1;//getRandomQuestionId();
+        return quizService.getquestion(randid);
+    }*/
+    @GetMapping("/sed")
+    public void sed(){
+
+    }
